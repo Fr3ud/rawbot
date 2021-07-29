@@ -4,12 +4,17 @@ from aiogram.utils import executor
 bot = Bot(token="TOKEN")
 dp = Dispatcher(bot)
 
+
 @dp.message_handler()
 async def get_message(message: types.Message):
-    chat_id = message.chat.id
-    text = "Hello World!"
+    # chat_id = message.chat.id
+    # text = "Hello World!"
+    #
+    # sent_message = await bot.send_message(chat_id=chat_id, text=text)
 
-    sent_message = await bot.send_message(chat_id=chat_id, text=text)
-    print(sent_message.to_python())
+    sent_message = await bot.send_photo(chat_id=,
+                                        photo="https://m.media-amazon.com/images/M/MV5BM2EwMmRhMmUtMzBmMS00ZDQ3LTg4OGEtNjlkODk3ZTMxMmJlXkEyXkFqcGdeQXVyMjM5ODk1NDU@._V1_.jpg")
+    print(sent_message.photo[-1].file_unique_id)
+
 
 executor.start_polling(dp)
