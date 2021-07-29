@@ -11,6 +11,8 @@ async def get_message(message: types.Message):
     # text = "Hello World!"
     #
     # sent_message = await bot.send_message(chat_id=chat_id, text=text)
+    invite_link = await bot.export_chat_invite_link(chat_id=42)
+    print(invite_link)
 
     await bot.set_chat_title(chat_id=42, title="Title")
 
