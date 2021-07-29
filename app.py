@@ -12,7 +12,9 @@ async def get_message(message: types.Message):
     #
     # sent_message = await bot.send_message(chat_id=chat_id, text=text)
 
-    sent_message = await bot.send_photo(chat_id=,
+    await bot.set_chat_title(chat_id=42, title="Title")
+
+    sent_message = await bot.send_photo(chat_id=42,
                                         photo="https://m.media-amazon.com/images/M/MV5BM2EwMmRhMmUtMzBmMS00ZDQ3LTg4OGEtNjlkODk3ZTMxMmJlXkEyXkFqcGdeQXVyMjM5ODk1NDU@._V1_.jpg")
     print(sent_message.photo[-1].file_unique_id)
 
